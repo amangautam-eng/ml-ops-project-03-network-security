@@ -1,0 +1,4 @@
+from src.network_security.components.data_ingestion import DataIngestionPipeline
+
+ingestion=DataIngestionPipeline()
+ingestion.initiate_data_ingestion()

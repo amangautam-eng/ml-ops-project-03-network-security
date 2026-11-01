@@ -1,0 +1,6 @@
+root: src/network_security/artifacts
+raw : src/network_security/artifacts/raw_data
+
+data_ingestion:
+  root_dir: src/network_security/artifacts/data_ingestion
+  file_path: src/network_security/artifacts/data_ingestion/raw.csv
