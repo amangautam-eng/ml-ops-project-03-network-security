@@ -9,7 +9,10 @@ class DataIngestionConfig:
 
 @dataclass
 class DataTransformationConfig:
+    input:Path
     root_dir:Path
+    train: Path
+    test: Path
 
 
 class ConfigurationManager:
@@ -23,7 +26,7 @@ class ConfigurationManager:
     def data_ingestion_configuration(self):
         config=self.config.data_ingestion
 
-        create_dir([config.root_dir])
+        create_dir(config.root_dir)
         data_ingestion_config=DataIngestionConfig(
             root_dir=config.root_dir,
             file_path=config.file_path
@@ -31,4 +34,18 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+
+    def data_transformation_config(self):
+        config=self.config.data_transformation
+
+        create_dir(config.root_dir)
+
+        data_transform_config=DataTransformationConfig(
+            input=config.input,
+            root_dir=config.root_dir,
+            train=config.train,
+            test=config.test
+
+        )
+        return data_transform_config
     

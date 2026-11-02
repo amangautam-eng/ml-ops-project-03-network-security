@@ -1,6 +1,13 @@
 root: src/network_security/artifacts
 raw : src/network_security/artifacts/raw_data
 
+
 data_ingestion:
   root_dir: src/network_security/artifacts/data_ingestion
   file_path: src/network_security/artifacts/data_ingestion/raw.csv
+  
+data_transformation:
+  input : src/network_security/artifacts/data_ingestion/raw.csv
+  root_dir: src/network_security/artifacts/data_transformation
+  train : src/network_security/artifacts/data_transformation/train
+  test : src/network_security/artifacts/data_transformation/test
