@@ -37,16 +37,16 @@ class DataTransformation:
             train_path=Path(self.config.train)
             create_dir(self.config.train)
             print(f"Created train directory at {train_path}")
-            xtrain.to_csv(train_path/"train_features.csv",header=False)
-            ytrain.to_csv(train_path/"train_labels.csv",header=False)
+            xtrain.to_csv(train_path/"train_features.csv",header=False,index=False)
+            ytrain.to_csv(train_path/"train_labels.csv",header=False,index=False)
             print(f"Train data saved at path {train_path}")
     
             #Create test directory
             test_path=Path(self.config.test)
             create_dir(test_path)
             print(f"Creating test directory at {test_path}")
-            xtest.to_csv(test_path/"test_features.csv",header=False)
-            ytest.to_csv(test_path/"test_labels.csv",header=False)
+            xtest.to_csv(test_path/"test_features.csv",header=False,index=False)
+            ytest.to_csv(test_path/"test_labels.csv",header=False,index=False)
             print(f"Test data saved at path {test_path}")
 
             print("Data Transformation Completed")
